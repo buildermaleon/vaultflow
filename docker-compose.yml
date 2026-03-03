@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  vaultflow-test:
+    build: .
+    environment:
+      - VAULT_MASTER_KEY=test-key-32bytes!!!
+    volumes:
+      - vault-data:/root/.vaultflow
+    command: ["list"]
+
+volumes:
+  vault-data:
